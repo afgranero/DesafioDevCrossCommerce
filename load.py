@@ -10,6 +10,9 @@ app = Flask(__name__)
 
 @app.route('/numbers/<page>', methods=['GET'])
 def numbers(page):
+    sorted_list = app.config['sorted_list']
+    logger = app.config['logger']
+
     try:
         int_page =  int(page)
 
@@ -50,4 +53,6 @@ if __name__ == '__main__':
 
     logger.info(sorted_list)
 
+    app.config['logger'] = logger
+    app.config['sorted_list'] = sorted_list
     app.run(host='0.0.0.0', port='8003', debug=False)
