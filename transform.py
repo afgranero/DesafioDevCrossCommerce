@@ -4,22 +4,23 @@ import sys
 from config import *
 from log import Log
 
+
 class Transform:
     def __init__(self, logger):
         self.logger = logger
-        self.logger.info(MESSAGE_TRANSFORM_INIT)
+        self.status = TRANSFORM_STATUS_INITED
+        self.logger.info(MESSAGE_INIT.format(__class__.__name__))
 
     def sort(self, l):
         min, max = self.get_min_max(l)
         median = (min + max) / 2
 
-       # create two lists one with the smaller elements and other with the bigger elements ...
-        # list comprehensions create generator (as they are lazy evaluated)
+        # create two lists one with the smaller elements and other with the bigger elements
         list_bigger =  [e for e in l if e >= median]
         list_smaller = [e for e in l if e < median]
 
         # sort the two lists recursevelly ...
-        # ... lists with one element are already ordered ...
+        # ... lists with just one element are already ordered ...
         # ... so only sorts lists with more than one element
         if len(list_bigger) != 1:
             list_bigger = self.sort(list_bigger)
@@ -27,6 +28,7 @@ class Transform:
         if len(list_smaller) != 1:
             list_smaller = self.sort(list_smaller)
 
+        # join the two lists in order and return
         return list_smaller + list_bigger
 
     def get_min_max(self, list):
@@ -44,6 +46,12 @@ class Transform:
 
         return min, max
 
+    def run_sort(self, l):
+        self.status = TRANSFORM_STATUS_RUNNING
+        sorted_l = self.sort(l)
+        self.status = TRANSFORM_STATUS_ENDED
+
+        return sorted_l
 
 if __name__ == '__main__':
     import random

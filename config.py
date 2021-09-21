@@ -9,20 +9,34 @@ RETRY_LONG_INTERVAL = 50
 
 TASK_COUNT = 101
 
-LOG_FILE_TEMPLATE = "./logs/totem-{}.log"
+LOG_FILE_TEMPLATE = "./logs/desafio-{}.log"
 LOG_ID = "DesafioDevCrossCommerce"
 
-MESSAGE_REQUEST_INIT = "Class initialized."
+LOAD_PAGE_SIZE = 100
+
+EXTRACT_STATUS_INITED = "Extract inited"
+EXTRACT_STATUS_RUNNING = "Extract runnning"
+EXTRACT_STATUS_ENDED = "Extract ended"
+
+TRANSFORM_STATUS_INITED = "Transform inited"
+TRANSFORM_STATUS_RUNNING = "Transform running"
+TRANSFORM_STATUS_ENDED = "Transform ended"
+
+LOAD_STATUS_DATA_READY = "Load data ready"
+
+MESSAGE_INIT = "Class '{}' initialized."
+
 MESSAGE_REQUEST_SUCCESS = "Request success for page '{}'."
 MESSAGE_REQUEST_ERROR = "Request error on retry '{}' of page '{}': '{}' - '{}'."
 MESSAGE_REQUEST_MAX_RETRIES = "Request max retries of '{}' reached."
 MESSAGE_REQUEST_LAST_PAGE = "Last page '{}' reached."
 MESSAGE_REQUESTS_PARALLEL_ROUND = "Beginning a new round of '{}' parallel requests for pages from '{}' to '{}'."
 MESSAGE_REQUESTS_PARALLEL_ERROR = "Error '{}' on round of parallel requests for pages from '{}' to '{}', retry '{}'."
-MESSAGAGE_SLEEPING ="Sleeeping for '{}' seconds."
+MESSAGAGE_SLEEPING = "Sleeeping for '{}' seconds."
 MESSAGE_SUCCESS = "Success, all pages scanned: '{}' elements fetched."
 
-MESSAGE_TRANSFORM_INIT = "Class initialized."
+MESSAGE_LOAD_REQUEST = "Get request for page '{}' and indexes from '{}' to '{}'."
+MESSAGE_LOAD_REQUEST_ERROR = "Invalid page parameter: '{}'"
 
 MESSAGE_MAIN_START = "Start."
 MESSAGE_MAIN_EXTRACT_START = "Start extract."
@@ -30,3 +44,5 @@ MESSAGE_MAIN_EXTRACT_END = "End extract."
 MESSAGE_MAIN_TRANSFORM_START = "Start transform."
 MESSAGE_MAIN_TRANSFORM_END = "End transform."
 MESSAGE_MAIN_END = "End."
+
+

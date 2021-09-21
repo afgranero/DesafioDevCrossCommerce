@@ -14,8 +14,9 @@ class Extract:
         self.logger = logger
         self.url = url
         self.out_list = []
-        self.loop = asyncio.get_event_loop()
-        self.logger.info(MESSAGE_REQUEST_INIT)
+        self.status = EXTRACT_STATUS_INITED
+        # self.loop = asyncio.get_event_loop()
+        self.logger.info(MESSAGE_INIT.format(__class__.__name__))
 
     async def get_pages(self, page_start, page_stop):
         async with aiohttp.ClientSession() as session:
@@ -47,6 +48,7 @@ class Extract:
                         # TODO permanent failure raise exception
 
     def run(self):
+        self.status = EXTRACT_STATUS_RUNNING
         page_start = 1
         page_stop = TASK_COUNT
         retry_count = 0
@@ -76,6 +78,8 @@ class Extract:
             page_stop = page_start + TASK_COUNT - 1
 
         self.logger.info(MESSAGE_SUCCESS.format(len(self.out_list)))
+        self.status = EXTRACT_STATUS_ENDED
+
         return self.out_list
 
 
