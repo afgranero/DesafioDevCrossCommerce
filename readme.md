@@ -43,7 +43,7 @@ A cada execução é gerado um novo arquivo em /logs/.
 No caso do _extract_ eu tive de usar asyncio (daí um Python superior ao 3.5) devido ao elevado númeor de páginas para poder executar várias chamadas simultâneamente.
 Senão demoraria muito para obter os dados. A extração está resistente aos _internal server erros_ que ocorrem e a uns eventuais _timeouts_ quando o número de _threads_ paralelas deixa o servidor lento, quando isso ocorre eu dou uma pausa maior antes de prossegir para evitar derrubar o servidor ou deixá-lo lento.
 
-### Transform
+### Transformação (ordenação)
 
 O algoritmo de ordenação que eu usei não é nenhum dos clássicos.
 Como o desafio pedia para fazer tudo do zero criei um.
@@ -51,7 +51,7 @@ Como eu não queria tomar muito do meu tempo, optei por um recursivo, assim ele 
 O desempenho dele é razoável: para 1 milhão de entradas ele leva uns 25 a 30 segundos.
 Como ele divide a lista duas partes de cada vez acredito que ele tenha complexidade _O(n * log(n))_ o que o torna próximo do heapsort e do quicksort.
 
-### API load
+### Load (web API)
 
 A API pedida é similar a original, a diferença é que o parâmetro da página é passado por GET assim:
 
