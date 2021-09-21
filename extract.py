@@ -10,8 +10,8 @@ from log import Log
 
 class Extract:
 
-    def __init__(self, url):
-        self.logger = Log.init_logger(LOG_ID, LOG_FILE_TEMPLATE)
+    def __init__(self, logger, url):
+        self.logger = logger
         self.url = url
         self.out_list = []
         self.loop = asyncio.get_event_loop()
@@ -80,5 +80,6 @@ class Extract:
 
 
 if __name__ == '__main__':
-    extract = Extract(EXTRACT_ADDRESS)
+    logger = Log.init_logger(LOG_ID, LOG_FILE_TEMPLATE)
+    extract = Extract(logger, EXTRACT_ADDRESS)
     extract.run()
