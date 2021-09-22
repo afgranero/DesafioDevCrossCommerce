@@ -109,6 +109,6 @@ Mas isso é uma questão de _deploy_ e não de desenvolvimento e tornaria mais c
 
 Isso é para o meu controle:
 
-* tornar a parte da aplicação Flask assíncrona de modo a char a API e mostrar a progressão da extração e transformação;
-* criar um _mock_ para emular o teste da extração;
+* tornar a parte da aplicação Flask assíncrona enquanto obtém od dados a fornecer, de modo a char a API e mostrar a progressão da extração e transformação;
+* criar um _mock_ para emular o teste da extração, do jeito que está hoje ele é um teste de integração e não um _unit test_;
 * os testes em ```tests/transform_test.py``` e ```tests/extract_transform.py``` tem um método _helper_ repetido, extrair para uma classe separada mas manter os testes dela;
