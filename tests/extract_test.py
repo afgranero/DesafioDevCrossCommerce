@@ -13,7 +13,7 @@ class ExtractTest(unittest.TestCase):
         extract = Extract(self.logger, EXTRACT_ADDRESS)
         extract.run()
         self.assertEqual(extract.status, EXTRACT_STATUS_ENDED)
-        self.assertTrue(len(extract.out_list) == 1000000 )
+        self.assertTrue(len(extract.out_list) == 1000000)
 
 
 if __name__ == '__main__':

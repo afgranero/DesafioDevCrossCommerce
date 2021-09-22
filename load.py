@@ -14,7 +14,7 @@ def numbers(page):
     logger = app.config['logger']
 
     try:
-        int_page =  int(page)
+        int_page = int(page)
 
         page_index = int_page - 1
         start_index = page_index * LOAD_PAGE_SIZE
