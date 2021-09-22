@@ -36,7 +36,7 @@ Todas as configurações do sistema estão no arquivo ```config.py```: mensagens
 
 O sistema faz _log_ de tudo que faz (exceto na ordenação, pois isso impactaria muito no desempenho).
 Assim é mais fácil de verificar o funcionamento dele, especialmente em operações demoradas. Os _logs_ pararecem tanto na linha de comando como ficam nos arquivos.
-A cada execução é gerado um novo arquivo em /logs/.
+A cada execução é gerado um novo arquivo em _logs_.
 
 ### Extração
 
@@ -111,4 +111,4 @@ Isso é para o meu controle:
 
 * tornar a parte da aplicação Flask assíncrona de modo a char a API e mostrar a progressão da extração e transformação;
 * criar um _mock_ para emular o teste da extração;
-* os testes em ```tests/transform_test.py``` e ```tests/extract_transform.py``` tem um método helper repetido, extrair para uma classe separada mas manter os testes dela;
+* os testes em ```tests/transform_test.py``` e ```tests/extract_transform.py``` tem um método _helper_ repetido, extrair para uma classe separada mas manter os testes dela;
