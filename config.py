@@ -7,7 +7,7 @@ RETRY_MAX_COUNT = 5
 RETRY_INTERVAL = 5
 RETRY_LONG_INTERVAL = 50
 
-TASK_COUNT = 101
+TASK_COUNT = 501
 
 LOG_FILE_TEMPLATE = "./logs/desafio-{}.log"
 LOG_ID = "DesafioDevCrossCommerce"
@@ -23,7 +23,7 @@ TRANSFORM_STATUS_RUNNING = "Transform running"
 TRANSFORM_STATUS_ENDED = "Transform ended"
 
 LOAD_STATUS_DATA_READY = "Load data ready"
-LOAD_TEST_URL = "http://192.168.1.10:8003/numbers/{}"
+LOAD_TEST_URL = "http://localhost:8003/numbers/{}"
 
 MESSAGE_INIT = "Class '{}' initialized."
 
