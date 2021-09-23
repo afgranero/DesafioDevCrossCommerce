@@ -1,7 +1,5 @@
 import unittest
 import requests
-import threading
-from multiprocessing import Process
 
 from config import *
 from log import Log
